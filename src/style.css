@@ -1,0 +1,31 @@
+.timer-con{
+    border:1px solid;
+    display:flex;
+    flex-direction:row-reverse;
+    justify-content:space-between;
+}
+
+.time-left{
+    border:1px solid;
+    width:80px;
+    height:20px;
+}
+
+#typing-text{
+    font-size: 23px;
+    width: 640px;
+    border: 1px solid;
+    padding:10px;
+    word-break: break-all;
+    line-height: 32px;
+}
+.correct{
+    color:green;
+}
+.incorrect{
+    color:rgb(146, 30, 30);
+    background-color: rgba(176, 117, 127,0.5);
+}
+.plain{
+    color:black;
+}
