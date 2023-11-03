@@ -1,4 +1,5 @@
-import React,{useState,useEffect} from "react";
+import React,{useState,useEffect,useContext} from "react";
+import ThemeContext from "../components/ThemeContext"
 
 let timer;
 
@@ -8,7 +9,9 @@ const Timer1 = ({seconds})=>{     // props.seconds
 
   const[time,setTime] = useState(duration ? duration:40);
 
+  const {theme}  = useContext(ThemeContext)
 
+  
     function startCoundown(){
         setTime((prev)=>prev-1);
     }
@@ -44,7 +47,7 @@ const Timer1 = ({seconds})=>{     // props.seconds
 
     return(
         <div>
-            <button id="sec-btn">{time}Sec</button>
+            <button id="sec-btn" className={"sec-button "+theme.btnColorClass}>{time} Sec</button>
         </div>
     )
 
