@@ -121,6 +121,9 @@ const TypingContainer = ({timerInformation}) => {
 
   }
 
+  useEffect(()=>{          // when the component re mount (router functionality) 
+    resetEveryThing();     // this is going to run for once to reset everything
+  },[])
 
     return (
         <div>
