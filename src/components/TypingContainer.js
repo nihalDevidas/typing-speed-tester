@@ -82,8 +82,12 @@ const TypingContainer = ({timerInformation}) => {
             let typedValue = typedText.split("")[charIndex];
             
             if(typedValue == null){  // backspace handling
+
+              let textData = [...text,text[charIndex].classValue = theme.textColorClass]  // remove cursol from current
                   charIndex--;
-               setText([...text,text[charIndex].classValue = theme.textColorClass]); 
+                 textData= [...text,text[charIndex].classValue = `${theme.textColorClass} cursol`]  // add this class to previous
+
+               setText(textData); 
 
                if(text[charIndex].classValue === "incorrect"){
                 mistakes.current = mistakes.current-1
@@ -93,11 +97,19 @@ const TypingContainer = ({timerInformation}) => {
             else{
                   if(typedValue === text[charIndex].character)
                   {
-                    setText([...text,text[charIndex].classValue = "correct"]);
+                    let textData = charIndex === 0 ?[...text,text[charIndex].classValue = "correct"]
+                                                   : [...text,text[charIndex-1].classValue = "correct"]
+
+                      textData =  [...text,text[charIndex].classValue = "correct cursol"]
+                     setText(textData);
                   }
                 else{
-                  setText([...text,text[charIndex].classValue = "incorrect"]);
-                   mistakes.current = mistakes.current+1
+                     let textData = charIndex=== 0?[...text,text[charIndex].classValue = "incorrect"]
+                                                 : [...text,text[charIndex-1].classValue = "incorrect"]
+
+                         textData = [...text,text[charIndex].classValue = "incorrect cursol"]
+                         setText(textData);
+                         mistakes.current = mistakes.current+1
                   }
                 charIndex++;  
               }

@@ -46,7 +46,7 @@ function App() {
           </div>
           
           <Routes>
-            <Route path = "/typing-speed-tester/" element = {<TypingPage/>}/>
+            <Route path = "/typing-speed-tester" element = {<TypingPage/>}/>
             <Route path = "/scorePage" element = {<TypingScorePage/>}/>
           </Routes>
 

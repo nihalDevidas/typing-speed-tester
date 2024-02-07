@@ -75,6 +75,10 @@ body{
     font-family:monospace;
     margin:auto;
 }
+#tying-text >.plain{
+    padding:0px;
+}
+
 .correct{
     color:green;
 }
@@ -82,6 +86,23 @@ body{
     color:rgb(146, 30, 30);
     background-color: rgba(176, 117, 127,0.5);
 }
+
+.temCursor{
+    border-left: 3px solid rgba(185, 4, 245,1);
+    animation: blink 0.5s linear 0s infinite alternate;
+}
+.cursol{
+    border-right: 3px solid rgba(185, 4, 245,1);
+    animation: blink 0.3s linear 0s infinite alternate;
+  }
+  @keyframes blink{
+    from{
+        border-right: 3px solid rgba(185, 4, 245,0);
+    }
+    to{
+        border-right: 3px solid rgba(185, 4, 245,1);
+    }
+  }
 
 .timer-con{
     display:flex;
@@ -237,4 +258,83 @@ button:after {
     margin: 0;
     opacity: 1;
     transition: 0s
+  }
+
+  /* final score card css */
+  body{
+    width:100%
+  }
+  .scoreContainer{
+    border-radius:15px;
+    width:85%;
+    margin-inline:auto;
+    min-height:400px;
+    background-color: rgb(133, 168, 233);
+    padding:5px;
+  }
+
+  .scoreContainer > h1{
+    text-align: center;
+    font-size: 45px;
+    color:rgb(13, 91, 235);
+    text-shadow: 0px 0px 5px  rgb(30, 213, 246);
+    
+  }
+
+  .dataContainer ,.btndiv{
+    
+    width: 55%;
+    margin-inline:auto;
+    
+
+  }
+  
+  .dataContainer{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    column-gap: 3px;
+    height: 65px;
+    padding:6px;
+    margin-top:50px;
+    
+  }
+  .wpm, .accuracy{
+    font-size: 30px;
+    font-weight: 600;
+    color: rgb(245, 244, 231);
+    text-shadow: 0px 0px 5px  rgb(13, 91, 235);
+    background-color: rgb(89, 140, 235);
+    padding:15px 20px;
+    border-radius:10px
+  }
+
+  .btndiv{
+    margin-top: 80px;
+    display:flex;
+    justify-content: center;
+    
+  }
+  .btndiv > button{
+    font-size: 30px;
+    font-weight: 600;
+    padding:15px 20px;
+    border-radius:10px;
+    border:0px;
+    background-color: rgb(89, 140, 235);
+    color: rgb(245, 244, 231);
+    box-shadow: inset 0px 0px 10px rgb(13, 91, 235);
+    
+    animation: bloom 0.6s ease-in-out 0s infinite alternate;
+  }
+
+  @keyframes bloom {
+    from{
+      text-shadow: 0px 0px 0px  rgb(13, 91, 235);
+      box-shadow:  0px 0px 0px rgb(30, 213, 246);
+    }
+    to{
+        text-shadow: 1px 1px 10px  rgb(13, 91, 235);
+        box-shadow:  0px 0px 10px rgb(30, 213, 246);
+    }
   }

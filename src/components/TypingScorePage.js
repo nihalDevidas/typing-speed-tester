@@ -3,8 +3,7 @@ import {useNavigate} from "react-router-dom"
 import { useDispatch, useSelector } from 'react-redux'
 
 
-let con1 = {border:"1px solid black",padding:"10px",width:"1000px",height:"300px"}
-let con2 = {border:"1px solid"}
+
 
 
 const TypingScorePage = () => {
@@ -15,15 +14,18 @@ const TypingScorePage = () => {
     console.log(TypingTestResult);// data is recived success
  
   return (
-    <div style={con1}>
+    <div className='scoreContainer'>
         <h1>Typing Score</h1>
 
-        <div style={con2}>
-          <div>{TypingTestResult.wpm}</div>
-          <div>{TypingTestResult.accuracy}%</div>
+        <div className='dataContainer'>
+          <div className='wpm'>WPM : {TypingTestResult.wpm}</div>
+          <div className='accuracy'> Acurracy : {TypingTestResult.accuracy}%</div>
+          <div className='accuracy'> Mistakes : {TypingTestResult.mistakes}</div>
         </div>
 
-        <button onClick = {()=>navigate("/typing-speed-tester/")}>Try Again</button>
+         <div className='btndiv'>
+        <button onClick = {()=>navigate("/typing-speed-tester")}>Try Again</button>
+        </div>
     </div>
   )
 }
